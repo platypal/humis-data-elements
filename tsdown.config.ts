@@ -1,0 +1,15 @@
+import { defineConfig } from 'tsdown'
+
+export default defineConfig({
+  dts: {
+    tsgo: true
+  },
+  exports: true,
+  entry: ['src/index.ts'],
+  outExtensions: () => {
+    return {
+      dts: '.d.ts',
+      js: '.js'
+    }
+  }
+})

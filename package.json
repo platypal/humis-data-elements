@@ -1,0 +1,38 @@
+{
+  "name": "humis-data-elements",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "TypeScript library for HUD HMIS applications.",
+  "author": "Albert Flores <albert@platypal.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/platypal/humis-data-elements",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platypal/humis-data-elements.git"
+  },
+  "bugs": {
+    "url": "https://github.com/platypal/humis-data-elements/issues"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "bumpp": "^11.1.0",
+    "tsdown": "^0.22.5",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
