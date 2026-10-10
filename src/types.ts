@@ -14,7 +14,7 @@ export type DataElement = {
   key: string
   name: string
   displayName?: string | undefined
-  fields: {[key: string]: DataElementField}
+  fields: DataElementField[]
 }
 
 /**
@@ -36,7 +36,8 @@ export type DataElement = {
  */
 export type DataElementField = {
   id: string
-  name: AllCsvHeaders
+  csvHeader: AllCsvHeaders
+  key: DataElementFieldKey
   displayName?: string | undefined
   type: 'text' | 'date' | 'date-time' | 'options' | 'multi-select' | 'checkbox'
   defaultValue?: DataElementFieldType
@@ -50,6 +51,8 @@ export type DataElementField = {
 
 export type DataElementFieldType = string | number | number[] | undefined | null
 
+export type DataElementFieldKey = Lowercase<AllCsvHeaders>
+
 /**
  * Fields of type Options and MultiSelect require options
  *
@@ -62,9 +65,3 @@ export type ResponseOption = {
   displayText: string
   disabled?: boolean
 }
-
-/**
- * Need a type to represent a collecion of elements that hold the values of the
- * data element field definitions. It can take the type of the defaultValue to create
- * a new key with
- */

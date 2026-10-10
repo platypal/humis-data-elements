@@ -75,18 +75,18 @@ function validateDateFieldVal(f: DataElementField, v: DataElementFieldType) {
 
   // v should have 'string' type
   if(typeof v !== 'string') {
-    errs.push(`${f.name} must have "string" data type`)
+    errs.push(`${f.csvHeader} must have "string" data type`)
   }
   // v should have format YYYY-MM-DD
   if((typeof v === 'string') && !isValidDateFormat(v)) {
-    errs.push(`${f.name} should have the form YYYY-MM-DD`)
+    errs.push(`${f.csvHeader} should have the form YYYY-MM-DD`)
   }
   // v should be a valid date
   if((typeof v === 'string') && Number.isNaN(new Date(v))) {
-    errs.push(`${f.name} is not a valid date`)
+    errs.push(`${f.csvHeader} is not a valid date`)
   }
   
-  if(errs.length > 0) throw new ValidateValueError(errs, `One or more validation errors occured checking ${f.name}`)
+  if(errs.length > 0) throw new ValidateValueError(errs, `One or more validation errors occured checking ${f.csvHeader}`)
 }
 
 /**
@@ -125,18 +125,18 @@ function validateDateTimeFieldVal(f: DataElementField, v: DataElementFieldType) 
 
   // v should have 'string' type
   if(typeof v !== 'string') {
-    errs.push(`${f.name} must have "string" data type`)
+    errs.push(`${f.csvHeader} must have "string" data type`)
   }
   // v should have format YYYY-MM-DD HH:mm:ss
   if((typeof v === 'string') && !isValidDateTimeFormat(v)) {
-    errs.push(`${f.name} should have the form YYYY-MM-DD HH:mm:ss`)
+    errs.push(`${f.csvHeader} should have the form YYYY-MM-DD HH:mm:ss`)
   }
   // v should be a valid date
   if((typeof v === 'string') && Number.isNaN(new Date(v))) {
-    errs.push(`${f.name} is not a valid date`)
+    errs.push(`${f.csvHeader} is not a valid date`)
   }
   
-  if(errs.length > 0) throw new ValidateValueError(errs, `One or more validation errors occured checking ${f.name}`)
+  if(errs.length > 0) throw new ValidateValueError(errs, `One or more validation errors occured checking ${f.csvHeader}`)
 }
 
 /**

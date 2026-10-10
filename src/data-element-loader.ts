@@ -1,6 +1,8 @@
 import * as ude from './universal-data-elements'
 import * as vde from './veteran-data-elements'
 import * as psde from './project-specific-data-elements'
+import type { DataElement } from './types'
+import type { AllCsvHeaders } from './csv-headers'
 
 /**
  * Array of all data elements.
@@ -27,7 +29,7 @@ export function loadDataElement(de: string) {
 
 /**
  * Function for library consumers to load data elements fields based on a
- * string. The string should have the format "<dE.key>.<dE.field>"
+ * string. The string should have the format "<data-elemen.key>.<field.key>"
  */
 export function loadDataElementField(f: string) {
   // Parse the string
@@ -37,7 +39,7 @@ export function loadDataElementField(f: string) {
   // -- It should have a valid data element key before the '.'
   const de = loadDataElement(parts[0]) // let calling function catch the error
   // -- It should have a valid field of said data element after the '.'
-  const field = de.fields[parts[1]]
+  const field = de.fields.find((f) => f.key === parts[1])
   if(field === undefined) throw Error(`${de.key} has no field named ${parts[1]}`)
   return field
 }

@@ -1,6 +1,7 @@
 export type {
   DataElement,
   DataElementField,
+  DataElementFieldKey,
   DataElementFieldType,
   ResponseOption
 } from './types'

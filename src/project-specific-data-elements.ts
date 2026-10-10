@@ -4,10 +4,11 @@ export const psdeSex: DataElement = {
   deNumber: '4.21',
   key: 'clientSex',
   name: 'Sex',
-  fields: {
-    sex: {
+  fields: [
+    {
       id: '1',
-      name: 'Sex',      
+      csvHeader: 'Sex',
+      key: "sex",    
       type: 'options',
       responseOptions: [
         { value: 0, displayText: 'Female' },
@@ -20,5 +21,5 @@ export const psdeSex: DataElement = {
       placeholder: '',
       altText: ''
     }
-  }
+  ]
 }

@@ -26,46 +26,51 @@ export const udeName: DataElement = {
     deNumber: "3.01",
     key: "udeName",
     name: "Name",
-    fields: {
-        "firstName": {
+    fields: [
+        {
             id: "1",
-            name: "FirstName",
-            displayName: "FirstName",
+            csvHeader: "FirstName",
+            key: "firstname",
+            displayName: "First Name",
             type: "text",
             maxLength: 50,
             placeholder: "First name, alias, or description",
             altText: "Enter first name, alias, or descripton",
         },
-        "middleName": {
+        {
             id: "2",
-            name: "MiddleName",
+            csvHeader: "MiddleName",
+            key: "middlename",
             displayName: "Middle Name",
             type: "text",
             maxLength: 50,
             placeholder: "Middle name, or extended description",
             altText: "Enter middle name, or extended description",
         },
-        "lastName": {
+        {
             id: "3",
-            name: "LastName",
+            csvHeader: "LastName",
+            key: "lastname",
             displayName: "Last Name",
             type: "text",
             maxLength: 50,
             placeholder: "Last name, or extended description",
             altText: "Enter last name, or extended description",
         },
-        "nameSuffix": {
+        {
             id: "4",
-            name: "NameSuffix",
+            csvHeader: "NameSuffix",
+            key: "namesuffix",
             displayName: "Name Suffix",
             type: "text",
             maxLength: 50,
             placeholder: "Name Suffix (e.g., Jr.)",
             altText: "Enter name suffix",
         },
-        "nameDataQuality": {
+        {
             id: "5",
-            name: "NameDataQuality",
+            csvHeader: "NameDataQuality",
+            key: "namedataquality",
             displayName: "Name Data Quality",
             type: "options",
             responseOptions: NAME_DATA_QUALITY_3_01_5,
@@ -73,7 +78,7 @@ export const udeName: DataElement = {
             placeholder: "Select an option for name data quality",
             altText: "Choose an option for the name data quality",
         },
-    },
+    ],
 };
 
 /**
@@ -100,19 +105,22 @@ export const udeSSN: DataElement = {
     key: "udeSsn",
     name: "SSN",
     displayName: "Social Security Number",
-    fields: {
-        "ssn": {
+    fields: [
+        {
             id: "1",
-            name: "SSN",
+            csvHeader: "SSN",
+            key: "ssn",
+            displayName: "Social Security Number",
             type: "text",
             maxLength: 9,
             pattern: "[0-9]{9}",
             placeholder: "Enter full, or partial SSN",
             altText: "Enter full, or partial SSN",
         },
-        "ssnDataQuality": {
+        {
             id: "2",
-            name: "SSNDataQuality",
+            csvHeader: "SSNDataQuality",
+            key: "ssndataquality",
             displayName: "SSN Data Quality",
             type: "options",
             responseOptions: SSN_DATA_QUALITY_3_02_2,
@@ -120,7 +128,7 @@ export const udeSSN: DataElement = {
             placeholder: "Select an option for SSN data quality",
             altText: "Select an option for SSN data quality",
         },
-    },
+    ],
 };
 
 /**
@@ -142,18 +150,20 @@ export const udeDOB: DataElement = {
     deNumber: "3.03",
     key: "udeDob",
     name: "Date of Birth",
-    fields: {
-        "dob": {
+    fields: [
+        {
             id: "1",
-            name: "DOB",
+            csvHeader: "DOB",
+            key: "dob",
             displayName: "DOB",
             type: "date",
             placeholder: "yyyy-mm-dd",
             altText: "Enter client date of birth",
         },
-        "dobDataQuality": {
+        {
             id: "2",
-            name: "DOBDataQuality",
+            csvHeader: "DOBDataQuality",
+            key: "dobdataquality",
             displayName: "DOB Data Quality",
             type: "options",
             responseOptions: DOB_DATA_QUALITY_3_03_2,
@@ -161,7 +171,7 @@ export const udeDOB: DataElement = {
             placeholder: "Select an option...",
             altText: "Select an option for date of birth data quality",
         },
-    },
+    ],
 };
 
 /**
@@ -185,10 +195,11 @@ export const udeRaceEthnicity: DataElement = {
     deNumber: "3.04",
     key: "udeRaceEthnicity",
     name: "Race and Ethnicity",
-    fields: {
-        "raceEthnicity": {
+    fields: [
+        {
             id: "1",
-            name: "RaceEthnicity",
+            csvHeader: "RaceEthnicity",
+            key: "raceethnicity",
             displayName: "Race and Ethnicity (as many as are applicable)",
             type: "multi-select",
             responseOptions: RACE_ETHNICITY_CHOICE_3_04_1,
@@ -196,9 +207,10 @@ export const udeRaceEthnicity: DataElement = {
             placeholder: "",
             altText: "",
         },
-        "amIndAKNative": {
+        {
           id: "1",
-          name: "AmIndAKNative",
+          csvHeader: "AmIndAKNative",
+          key: "amindaknative",
           displayName: "American Indian, Alaska Native, or Indigenous",
           type: "checkbox",
           responseOptions: NO_YES_1_10,
@@ -206,9 +218,10 @@ export const udeRaceEthnicity: DataElement = {
           placeholder: "",
           altText: ""
         },
-        "asian": {
+        {
           id: "1",
-          name: "Asian",
+          csvHeader: "Asian",
+          key: "asian",
           displayName: "Asian or Asian American",
           type: "checkbox",
           responseOptions: NO_YES_1_10,
@@ -216,9 +229,10 @@ export const udeRaceEthnicity: DataElement = {
           placeholder: "",
           altText: ""
         },
-        "blackAfAmerican": {
+        {
           id: "1",
-          name: "BlackAfAmerican",
+          csvHeader: "BlackAfAmerican",
+          key: "blackafamerican",
           displayName: "Black, African American, or African",
           type: "checkbox",
           responseOptions: NO_YES_1_10,
@@ -226,9 +240,10 @@ export const udeRaceEthnicity: DataElement = {
           placeholder: "",
           altText: ""
         },
-        "hispanicLatinao": {
+        {
           id: "1",
-          name: "HispanicLatinao",
+          csvHeader: "HispanicLatinao",
+          key: "hispaniclatinao",
           displayName: "Hispanic/Lantina/o",
           type: "checkbox",
           responseOptions: NO_YES_1_10,
@@ -236,9 +251,10 @@ export const udeRaceEthnicity: DataElement = {
           placeholder: "",
           altText: ""
         },
-        "midEastNAfrican": {
+        {
           id: "1",
-          name: "MidEastNAfrican",
+          csvHeader: "MidEastNAfrican",
+          key: "mideastnafrican",
           displayName: "Middle Eastern or North African",
           type: "checkbox",
           responseOptions: NO_YES_1_10,
@@ -246,9 +262,10 @@ export const udeRaceEthnicity: DataElement = {
           placeholder: "",
           altText: ""
         },
-        "nativeHIPacific": {
+        {
           id: "1",
-          name: "NativeHIPacific",
+          csvHeader: "NativeHIPacific",
+          key: "nativehipacific",
           displayName: "Native Hawaiian or Pacific Islander",
           type: "checkbox",
           responseOptions: NO_YES_1_10,
@@ -256,9 +273,10 @@ export const udeRaceEthnicity: DataElement = {
           placeholder: "",
           altText: ""
         },
-        "white": {
+        {
           id: "1",
-          name: "White",
+          csvHeader: "White",
+          key: "white",
           displayName: "White",
           type: "checkbox",
           responseOptions: NO_YES_1_10,
@@ -266,9 +284,10 @@ export const udeRaceEthnicity: DataElement = {
           placeholder: "",
           altText: ""
         },
-        "raceNone": {
+        {
             id: "1.a",
-            name: "RaceNone",
+            csvHeader: "RaceNone",
+            key: "racenone",
             displayName: "Race none, choose one only if no race/ethnicity selected",
             type: "options",
             responseOptions: RACE_GENDER_NONE_1_6,
@@ -276,16 +295,17 @@ export const udeRaceEthnicity: DataElement = {
             placeholder: "",
             altText: "",
         },
-        "additionalRaceEthnicity": {
+        {
             id: "2",
-            name: "AdditionalRaceEthnicity",
+            csvHeader: "AdditionalRaceEthnicity",
+            key: "additionalraceethnicity",
             displayName: "Additional Race and Ethnicity Detail",
             type: "text",
             maxLength: 100,
             placeholder: "Additional Race/Ethnicity info",
             altText: "Enter additional race and ethnicity information",
         },
-    },
+    ],
 };
 
 /**
@@ -310,10 +330,11 @@ export const udeVeteranStatus: DataElement = {
     deNumber: "3.07",
     key: "udeVeteranStatus",
     name: "Veteran Status",
-    fields: {
-        "veteranStatus": {
+    fields: [
+        {
             id: "1",
-            name: "VeteranStatus",
+            csvHeader: "VeteranStatus",
+            key: "veteranstatus",
             displayName: "Veteran Status",
             type: "options",
             responseOptions: NO_YES_REASONS_FOR_MISSING_DATA_1_8,
@@ -321,5 +342,5 @@ export const udeVeteranStatus: DataElement = {
             placeholder: "Veteran Status",
             altText: "Select an option for veteran status",
         },
-    },
+    ],
 };
